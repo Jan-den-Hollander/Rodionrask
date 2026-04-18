@@ -320,7 +320,7 @@ export default function App() {
             <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }}
               className="flex flex-col items-center gap-1 ml-5 select-none">
               {/* Catalaanse vlag emoji */}
-              <span className="text-4xl drop-shadow-lg">🏴󠁥󠁳󠁣󠁴󠁿</span>
+              <span className="text-4xl drop-shadow-lg">🇪🇦</span>
               <span className="text-[0.5rem] tracking-widest uppercase text-[#d4a017]/40">Català</span>
             </motion.div>
           )}
