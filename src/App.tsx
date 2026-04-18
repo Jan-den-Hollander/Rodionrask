@@ -481,7 +481,7 @@ export default function App() {
 
       <div style={{ textAlign: 'center', padding: '1.5rem 1rem 2rem', fontSize: '0.72rem', lineHeight: 1.8, color: 'white', opacity: 0.85 }}>
         🇮🇹 Questa app è gratuita. Se la usi spesso, ti consigliamo di creare la tua chiave API personale — è facile e gratuita su aistudio.google.com.<br /><br />
-        🏴󠁥󠁳󠁣󠁴󠁿 Aquesta app és gratuïta. Si la fas servir sovint, et recomanem crear la teva pròpia clau API — és fàcil i gratuïta a aistudio.google.com.<br /><br />
+        🇪🇦 Aquesta app és gratuïta. Si la fas servir sovint, et recomanem crear la teva pròpia clau API — és fàcil i gratuïta a aistudio.google.com.<br /><br />
         🇬🇧 This app is free to use. If you use it regularly, we recommend creating your own API key — quick and free at aistudio.google.com.
       </div>
     </div>
