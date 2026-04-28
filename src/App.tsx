@@ -100,7 +100,6 @@ export default function App() {
     }
   };
 
-  // Catalaanse stem: Aoede (mediterraan warm)
   const speakIt = async (text: string) => {
     if (!text) return;
     setIsSpeaking(true);
@@ -136,7 +135,6 @@ export default function App() {
       } else throw new Error("No audio");
     } catch {
       const utterance = new SpeechSynthesisUtterance(text);
-      // ca-ES is de beste beschikbare code voor Catalaans
       utterance.lang = 'ca-ES'; utterance.rate = 0.85;
       utterance.onend = () => { setIsSpeaking(false); setStatus('Prem 🎤 per respondre · Premi 🎤 per rispondere'); };
       window.speechSynthesis.speak(utterance);
@@ -152,7 +150,6 @@ export default function App() {
       if (window.speechSynthesis) window.speechSynthesis.cancel();
       if (recognitionRef.current) { try { recognitionRef.current.stop(); } catch(_) {} }
       recognitionRef.current = new SR();
-      // ca-ES voor Catalaans spraakherkenning
       recognitionRef.current.lang = 'ca-ES';
       recognitionRef.current.continuous = false;
       recognitionRef.current.interimResults = false;
@@ -253,7 +250,6 @@ export default function App() {
     document.body.appendChild(a); a.click(); document.body.removeChild(a);
   };
 
-  // Catalaans: goud/geel #d4a017 (zoals de Catalaanse vlag) op donker
   return (
     <div className="min-h-screen w-full bg-[#080810] text-[#f5f0e8] font-sans selection:bg-[#d4a017]/30 flex flex-col pb-8">
       <div className="flex flex-col max-w-md mx-auto w-full px-4 pt-4 relative z-10">
@@ -283,7 +279,6 @@ export default function App() {
           )}
 
           <div className="relative w-full max-w-[200px] aspect-[3/4]">
-            {/* Catalaanse vlagkleuren: goud en rood */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#8b1a0a] via-[#d4a017] to-[#6b0e05] rounded-[50%_50%_46%_46%_/_28%_28%_72%_72%] p-1.5 shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
               <div className="w-full h-full bg-[#110c00] rounded-[47%_47%_44%_44%_/_26%_26%_74%_74%] overflow-hidden relative">
                 <video ref={videoRef} autoPlay playsInline muted
@@ -319,7 +314,6 @@ export default function App() {
           {showFlags && (
             <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }}
               className="flex flex-col items-center gap-1 ml-5 select-none">
-              {/* Catalaanse vlag emoji */}
               <span className="text-4xl drop-shadow-lg">🇪🇦</span>
               <span className="text-[0.5rem] tracking-widest uppercase text-[#d4a017]/40">Català</span>
             </motion.div>
@@ -384,8 +378,10 @@ export default function App() {
           <p className="text-[0.65rem] text-[#f0c040]/60 min-h-[1em] italic font-medium">{status}</p>
         </div>
 
+        {/* Chat — flex-col-reverse: nieuwste berichten bovenaan */}
         <div className="w-full h-[35vh] min-h-[250px] bg-black/30 border border-[#c9a84c]/10 rounded-xl overflow-y-auto p-3 flex flex-col-reverse gap-3 scrollbar-thin mb-4">
-          <div ref={chatEndRef} /> overflow-y-auto p-3 space-y-3 mb-4">
+          <div ref={chatEndRef} />
+
           {messages.map((msg, i) => {
             if (msg.role === 'error') {
               return (
@@ -428,6 +424,7 @@ export default function App() {
               </motion.div>
             );
           })}
+
           {isThinking && (
             <div className="flex gap-1.5 p-2 bg-[#d4a017]/5 border border-[#d4a017]/10 rounded-xl rounded-bl-none w-12">
               <div className="w-1 h-1 bg-[#f0c040] rounded-full animate-bounce" />
@@ -435,7 +432,6 @@ export default function App() {
               <div className="w-1 h-1 bg-[#f0c040] rounded-full animate-bounce [animation-delay:0.4s]" />
             </div>
           )}
-         
         </div>
 
         <div className="flex flex-col gap-3">
