@@ -384,7 +384,8 @@ export default function App() {
           <p className="text-[0.65rem] text-[#f0c040]/60 min-h-[1em] italic font-medium">{status}</p>
         </div>
 
-        <div className="w-full h-[35vh] min-h-[250px] bg-black/30 border border-[#d4a017]/10 rounded-xl overflow-y-auto p-3 space-y-3 mb-4">
+        <div className="w-full h-[35vh] min-h-[250px] bg-black/30 border border-[#c9a84c]/10 rounded-xl overflow-y-auto p-3 flex flex-col-reverse gap-3 scrollbar-thin mb-4">
+          <div ref={chatEndRef} /> overflow-y-auto p-3 space-y-3 mb-4">
           {messages.map((msg, i) => {
             if (msg.role === 'error') {
               return (
@@ -434,7 +435,7 @@ export default function App() {
               <div className="w-1 h-1 bg-[#f0c040] rounded-full animate-bounce [animation-delay:0.4s]" />
             </div>
           )}
-          <div ref={chatEndRef} />
+         
         </div>
 
         <div className="flex flex-col gap-3">
@@ -486,4 +487,4 @@ export default function App() {
       </div>
     </div>
   );
-}
+      }
